@@ -32,6 +32,16 @@ def guess_binary(answer, low, high):
         guesses += 1
 
 
+correctCount = 0
+maxGuesses = 0
 for number in range(LOW, HIGH + 1):
     number_of_guesses = guess_binary(number, LOW, HIGH)
     print("{} guessed in {}".format(number, number_of_guesses))
+
+    if number_of_guesses > maxGuesses:
+        maxGuesses, correctCount = number_of_guesses, 1
+    elif number_of_guesses == maxGuesses:
+        correctCount += 1
+
+print("I guessed without being told {} times. Max {} guesses."
+      .format(correctCount, maxGuesses))
