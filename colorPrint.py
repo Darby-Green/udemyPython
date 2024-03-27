@@ -20,17 +20,22 @@ print("and so is this")
 print(BLUE, "This will be in blue")
 
 
-def colorPrint(text: str, effect: str) -> None:
+def colorPrint(text: str, *effects: str) -> None:
     """
     Print text using the ANSI sequences to change color
     :param text: text to print
-    :param effect: effect we want, one of constants defined at start
+    :param effects: effects we want, zero or more constants defined at start
     """
-    outputString = "{0}{1}{2}".format(effect,text,RESET)
+    effectString = "".join(effects)
+    outputString = "{0}{1}{2}".format(effectString,text,RESET)
     print(outputString)
 
 colorama.init()
 colorPrint("Hello, red", RED)
+colorPrint("Hello, red in bold", RED, BOLD)
+colorPrint("Hello, blue", BLUE)
+colorPrint("Hello, blue reversed", BLUE, REVERSE)
+colorPrint("Hello, blue underlined and bold", BLUE, UNDERLINE, BOLD)
 print("Normal terminal color")
 colorPrint("Hello, green", GREEN)
 colorama.deinit()
