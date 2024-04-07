@@ -12,6 +12,14 @@ vehicles = {
 vehicles["Starfighter"] = "X-Wing"
 vehicles["Learjet"] = "Bombardier Learjet 75"
 vehicles['toy'] = 'Glider'
+
+#upgrade virago
+vehicles['virago'] = "Yamaha XV535"
+
+del vehicles["Starfighter"]
+result = vehicles.pop('f1', "That does not exist")
+print(result)
+print()
 # for key in vehicles:
 #     print(key, vehicles[key], sep=", ")
 
