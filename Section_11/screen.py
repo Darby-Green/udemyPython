@@ -5,6 +5,7 @@ mainWindow = tkinter.Tk()
 
 mainWindow.title("Grid Demo")
 mainWindow.geometry('640x480-8-200')
+mainWindow['padx'] = 8
 
 # This id for the title
 label = tkinter.Label(mainWindow, text="Tkinter Grid Demo")
@@ -86,9 +87,11 @@ daySpin.grid(row=1, column=0)
 monthSpin.grid(row=1, column=1)
 yearSpin.grid(row=1, column=2)
 
-
-
-
+# ok/cancel buttons
+okButton = tkinter.Button(mainWindow, text='Ok')
+cancelButton = tkinter.Button(mainWindow, text='Cancel', command=mainWindow.quit)
+okButton.grid(row=4, column=3, sticky='e')
+cancelButton.grid(row=4, column=4, sticky='w')
 
 mainWindow.mainloop()
 print(rbValue.get())
