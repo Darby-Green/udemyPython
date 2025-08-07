@@ -1,9 +1,7 @@
 from player import Player
-from enemy import Enemy, Troll, Vampyre
+from enemy import Enemy, Troll, Vampyre, VampyreKing
 
 darby = Player("Darby")
-
-from enemy import Enemy
 
 basicEnemy = Enemy("Bat", 12, 1)
 print(basicEnemy)
@@ -26,7 +24,7 @@ uglyTroll.grunt()
 anoutherTroll.grunt()
 brotherTroll.grunt()
 
-vamp = Vampyre("Dracula")
+vamp = Vampyre("Vamp")
 print(vamp)
 vamp.take_damage(3)
 print(vamp)
@@ -34,3 +32,10 @@ print(vamp)
 while vamp.alive:
     vamp.take_damage(1)
     print(vamp)
+
+vampKing = VampyreKing("Dracula")
+print(vampKing)
+vampKing.take_damage(20)
+print(vampKing)
+
+
